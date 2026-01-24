@@ -1,0 +1,6 @@
+2026-01-09 21:01:56,986 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/BasketItems
+2026-01-09 21:01:57,003 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/BasketItems
+2026-01-09 21:01:57,003 | HTTP_CLIENT | INFO | Validating response schema
+2026-01-09 21:01:57,004 | HTTP_CLIENT | INFO | Make GET request to http://127.0.0.1:3000/rest/basket/39
+2026-01-09 21:01:57,020 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/basket/39
+2026-01-09 21:01:57,021 | CHANGE_PASSWORD_ASSERTIONS | INFO | Checking customer feedback on feedback page

@@ -1,0 +1,13 @@
+2026-01-10 20:25:59,174 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Addresss
+2026-01-10 20:25:59,206 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Addresss
+2026-01-10 20:25:59,206 | HTTP_CLIENT | INFO | Make GET request to http://127.0.0.1:3000/api/Addresss
+2026-01-10 20:25:59,210 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/Addresss
+2026-01-10 20:25:59,211 | ADDRESS_ASSERTIONS | INFO | Checking product gets added to basket
+2026-01-10 20:25:59,211 | BASE_ASSERTIONS | INFO | Check that country matches Russia
+2026-01-10 20:25:59,211 | BASE_ASSERTIONS | INFO | Check that mobile_num matches 8555548232
+2026-01-10 20:25:59,211 | BASE_ASSERTIONS | INFO | Check that zip_code matches 204062
+2026-01-10 20:25:59,211 | BASE_ASSERTIONS | INFO | Check that street_address matches 108 пер. Набережный
+2026-01-10 20:25:59,211 | BASE_ASSERTIONS | INFO | Check that city matches к. Североморск
+2026-01-10 20:25:59,211 | BASE_ASSERTIONS | INFO | Check that state matches None
+2026-01-10 20:25:59,212 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/Addresss/16
+2026-01-10 20:25:59,228 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/Addresss/16

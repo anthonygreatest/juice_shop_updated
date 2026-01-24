@@ -1,0 +1,15 @@
+2026-01-09 21:01:56,865 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-01-09 21:01:56,901 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-01-09 21:01:56,902 | HTTP_CLIENT | INFO | Validating response schema
+2026-01-09 21:01:56,904 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-01-09 21:01:56,936 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-01-09 21:01:56,936 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/rest/user/login
+2026-01-09 21:01:56,955 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/user/login
+2026-01-09 21:01:56,957 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/BasketItems
+2026-01-09 21:01:56,981 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/BasketItems
+2026-01-09 21:01:56,981 | HTTP_CLIENT | INFO | Validating response schema
+2026-01-09 21:01:56,982 | BASE_ASSERTIONS | INFO | Check that response status code matches 200
+2026-01-09 21:01:56,982 | CHANGE_PASSWORD_ASSERTIONS | INFO | Checking product gets added to basket
+2026-01-09 21:01:56,982 | BASE_ASSERTIONS | INFO | Check that product_id matches 17
+2026-01-09 21:01:56,982 | BASE_ASSERTIONS | INFO | Check that basket_id matches 39
+2026-01-09 21:01:56,982 | BASE_ASSERTIONS | INFO | Check that quantity matches 1

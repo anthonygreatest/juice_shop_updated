@@ -1,0 +1,21 @@
+2026-01-10 20:25:58,736 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-01-10 20:25:58,771 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-01-10 20:25:58,772 | HTTP_CLIENT | INFO | Validating response schema
+2026-01-10 20:25:58,772 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-01-10 20:25:58,809 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-01-10 20:25:58,810 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/rest/user/login
+2026-01-10 20:25:58,830 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/user/login
+2026-01-10 20:25:58,877 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Addresss
+2026-01-10 20:25:58,906 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Addresss
+2026-01-10 20:25:58,907 | HTTP_CLIENT | INFO | Validating response schema
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that response status code matches 201
+2026-01-10 20:25:58,907 | ADDRESS_ASSERTIONS | INFO | Checking product gets added to basket
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that full_name matches 陈建华
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that country matches China
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that mobile_num matches 1349819630
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that zip_code matches 555997
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that street_address matches 136 桑街
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that city matches 太原县
+2026-01-10 20:25:58,907 | BASE_ASSERTIONS | INFO | Check that state matches None
+2026-01-10 20:25:58,909 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/Addresss/15
+2026-01-10 20:25:58,924 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/Addresss/15

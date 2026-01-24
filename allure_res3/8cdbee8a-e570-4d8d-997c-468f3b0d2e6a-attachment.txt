@@ -1,0 +1,20 @@
+2026-01-17 19:58:22,523 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-01-17 19:58:22,573 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-01-17 19:58:22,574 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-01-17 19:58:22,575 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-01-17 19:58:22,618 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-01-17 19:58:22,618 | BASE_PAGE | INFO | Opening url http://127.0.0.1:3000/#/login
+2026-01-17 19:58:27,489 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-01-17 19:58:27,490 | INPUT | INFO | Fill input Email with dstone@example.org
+2026-01-17 19:58:28,027 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-01-17 19:58:28,028 | INPUT | INFO | Checking that input Email has value dstone@example.org
+2026-01-17 19:58:28,044 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-01-17 19:58:28,044 | INPUT | INFO | Fill input Password with B#v*5Zis$f
+2026-01-17 19:58:28,569 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-01-17 19:58:28,569 | INPUT | INFO | Checking that input Password has value B#v*5Zis$f
+2026-01-17 19:58:28,574 | BASE_ELEMENT | INFO | Getting locator button#loginButton at index 0
+2026-01-17 19:58:28,574 | BASE_ELEMENT | INFO | Clicking button Login Button
+2026-01-17 19:58:29,112 | BASE_ELEMENT | INFO | Getting locator button#navbarAccount at index 0
+2026-01-17 19:58:29,113 | BASE_ELEMENT | INFO | Clicking button Account Menu
+2026-01-17 19:58:29,669 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Go to user profile"] span.mat-mdc-menu-item-text span at index 0
+2026-01-17 19:58:29,669 | BASE_ELEMENT | INFO | Checking that text Account Name has text dstone@example.org
