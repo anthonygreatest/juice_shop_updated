@@ -64,11 +64,6 @@ class TestDeluxeMembership:
         checkout_page, user_register_data_via_ui, deluxe_membership_page, payment_options_page,
         navigate_to_payment_options_page):
 
-        log_out_and_log_in(
-            current_page=deluxe_membership_page,
-            login_data=user_register_data_via_ui
-        )
-
         create_address(headers=get_headers)
 
         selected_product = pick_product_to_purchase(available='sale')
