@@ -1,3 +1,4 @@
+import os
 from pathlib import Path
 from typing import Self
 
@@ -25,7 +26,7 @@ class SettingsUI(BaseSettings):
     @classmethod
     def initialize(cls) -> Self:
 
-        videos_path = Path('/.videos')
-        videos_path.mkdir(exist_ok=True)
+        videos_path = Path(os.getenv("VIDEOS_PATH", "videos"))
+        videos_path.mkdir(exist_ok=True, parents=True)
 
         return cls(videos_dir=videos_path)
