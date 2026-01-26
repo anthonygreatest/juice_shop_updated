@@ -40,6 +40,9 @@ jobs:
           pip install -r requirements.txt
           pip install allure-pytest
 
+      - name: Install Playwright Browsers
+        run: playwright install
+
       - name: Run selected tests
         run: |
           # Запуск тестов с тегом smoke
