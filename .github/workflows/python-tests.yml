@@ -13,6 +13,7 @@ env:
   APP_URL: http://127.0.0.1:3000
   SLOW_MO: 500
   VIDEOS_PATH: "./videos"
+  SHOP_HTTP_CLIENT: "http://127.0.0.1:3000/api"
 
 
 jobs:
