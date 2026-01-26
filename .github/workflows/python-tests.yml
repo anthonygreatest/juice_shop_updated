@@ -64,6 +64,12 @@ jobs:
           # Запуск тестов с тегом smoke
           pytest tests/tests_frontend/ -m smoke --alluredir=allure-results5 --maxfail=5 -v
 
+      - name: Install Allure CLI
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y npm
+          sudo npm install -g allure-commandline --save-dev
+
       - name: Generate Allure Report
         run: |
           pip install allure-commandline
