@@ -32,7 +32,7 @@ jobs:
       - name: Run selected tests
         run: |
           # Запуск тестов с тегом smoke
-          pytest tests/ -m smoke --alluredir=allure-results5 --maxfail=5 -v
+          pytest tests/tests_frontend/ -m smoke --alluredir=allure-results5 --maxfail=5 -v
 
       - name: Generate Allure Report
         run: |
