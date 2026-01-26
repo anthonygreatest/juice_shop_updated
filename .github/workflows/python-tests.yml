@@ -7,6 +7,14 @@ on:
   pull_request:
     branches: [master, develop]
 
+env:
+  EXPECT_TIMEOUT: 15000
+  HEADLESS: true
+  APP_URL: http://127.0.0.1:3000
+  SLOW_MO: 500
+  VIDEOS_PATH: "./videos"
+
+
 jobs:
   test:
     runs-on: ubuntu-latest
