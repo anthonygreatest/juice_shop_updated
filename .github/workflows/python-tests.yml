@@ -43,6 +43,22 @@ jobs:
       - name: Install Playwright Browsers
         run: playwright install
 
+      - name: Start Juice Shop
+        run: |
+          docker pull bkimminich/juice-shop
+          docker run -d -p 3000:3000 --name juice-shop bkimminich/juice-shop
+          - name: Wait for Juice Shop
+            run: |
+              n=0
+              until curl -s http://127.0.0.1:3000; do
+                n=$((n+1))
+                if [ $n -gt 30 ]; then
+                  echo "Server did not start in time"
+                  exit 1
+                fi
+                sleep 1
+              done
+
       - name: Run selected tests
         run: |
           # Запуск тестов с тегом smoke
