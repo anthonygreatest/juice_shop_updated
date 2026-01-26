@@ -68,7 +68,8 @@ jobs:
         run: |
           sudo apt-get update
           sudo apt-get install -y npm
-          sudo npm install -g allure-commandline --save-dev
+          sudo npm install -g allure-commandline
+          allure --version
 
       - name: Generate Allure Report
         run: |
