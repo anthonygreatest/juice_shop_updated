@@ -55,7 +55,7 @@ class PaymentOptionsPage(BasePage, LinkAccessMixin, NegativeTestsMixin):
     def check_card_data_on_page_matches_expected(self, expected_card_data: dict):
         self.card_info.check_have_text(expected_card_data['full_name'], nth=2)
         self.card_info.check_have_text('*' * 12 + str(expected_card_data['card_num'])[12:], nth=1)
-        self.card_info.check_have_text(f'{expected_card_data['exp_month']}/{expected_card_data['exp_year']}', nth=3)
+        self.card_info.check_have_text(f"{expected_card_data['exp_month']}/{expected_card_data['exp_year']}", nth=3)
 
     def check_card_added_toast_appears_on_page(self, card):
         self.toast.check_toast_text(self.CARD_ADDED_TEXT(str(card['card_num'])))
