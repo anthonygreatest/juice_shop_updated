@@ -18,7 +18,6 @@ env:
   VIDEOS_PATH: "./videos"
 
 
-
 jobs:
   test:
     runs-on: ubuntu-latest
