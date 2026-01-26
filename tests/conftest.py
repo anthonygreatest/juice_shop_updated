@@ -35,12 +35,12 @@ def raw_api_client(http_client):
     return RawAPIClient(http_client)
 
 @pytest.fixture(scope='session')
-def settings() -> Settings:
+def api_settings() -> Settings:
     return Settings()
 
 @pytest.fixture(scope='session')
-def http_client(settings: Settings) -> Client:
-    settings = settings.shop_http_client
+def http_client(api_settings: Settings) -> Client:
+    settings = api_settings.shop_http_client
     return Client(
         timeout=settings.timeout,
         base_url=settings.client_url,

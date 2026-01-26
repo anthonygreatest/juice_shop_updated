@@ -47,15 +47,14 @@ from utils.schemas.login_response_schema import LoginResponseSchema
 
 
 @pytest.fixture(scope='session')
-def settings_ui():
+def ui_settings():
     return SettingsUI.initialize()
 
-
 @pytest.fixture
-def unauth_page(playwright: Playwright, settings_ui: SettingsUI, request):
+def unauth_page(playwright: Playwright, ui_settings: SettingsUI, request):
 
-    browser = playwright.chromium.launch(headless=settings_ui.headless, slow_mo=settings_ui.slow_mo)
-    context = browser.new_context(base_url=f'{settings_ui.app_url}', record_video_dir=settings_ui.videos_dir)
+    browser = playwright.chromium.launch(headless=ui_settings.headless, slow_mo=ui_settings.slow_mo)
+    context = browser.new_context(base_url=f'{ui_settings.app_url}', record_video_dir=ui_settings.videos_dir)
     page = context.new_page()
     yield page
     page.close()
@@ -152,9 +151,9 @@ def change_password_after_login_page(register, unauth_page):
 
 
 @pytest.fixture(scope='session')
-def logged_in(playwright: Playwright, settings_ui: SettingsUI, register):
-    browser = playwright.chromium.launch(headless=settings_ui.headless, slow_mo=settings_ui.slow_mo)
-    context = browser.new_context(base_url=f'{settings_ui.app_url}', record_video_dir=settings_ui.videos_dir)
+def logged_in(playwright: Playwright, ui_settings: SettingsUI, register):
+    browser = playwright.chromium.launch(headless=ui_settings.headless, slow_mo=ui_settings.slow_mo)
+    context = browser.new_context(base_url=f'{ui_settings.app_url}', record_video_dir=ui_settings.videos_dir)
     page = context.new_page()
 
     register_response, new_user = register_user_and_set_security_answer(register)
