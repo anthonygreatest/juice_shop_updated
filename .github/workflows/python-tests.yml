@@ -73,7 +73,6 @@ jobs:
 
       - name: Generate Allure Report
         run: |
-          pip install allure-commandline
           allure generate allure-results5 --clean -o allure-report
 
       - name: Upload Allure Report Artifact
