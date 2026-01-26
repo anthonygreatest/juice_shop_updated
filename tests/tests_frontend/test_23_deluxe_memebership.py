@@ -8,6 +8,7 @@ from tests.tests_frontend.frontend_helpers import log_in_user, log_out_and_log_i
 from utils.assertions.basket_assertions import assert_price_changes_for_deluxe_member
 from utils.assertions.e_wallet_assertions import assert_balance_changes_after_paying_membership_fee
 
+@pytest.mark.smoke
 @pytest.mark.usefixtures('close_cookies_banner')
 @allure.feature('Deluxe Membership')
 @allure.story('Valid deluxe membership flow')
