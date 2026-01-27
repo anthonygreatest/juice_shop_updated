@@ -1,4 +1,4 @@
 "DESCRIPTION","DURATION IN MS","NAME","PARENT SUITE","START TIME","STATUS","STOP TIME","SUB SUITE","SUITE","TEST CLASS","TEST METHOD"
-"","7391","test_deluxe_membership_offers_sales","tests.tests_frontend","2026-01-27","passed","2026-01-27","TestDeluxeMembership","test_23_deluxe_memebership","",""
-"","7529","test_deluxe_membership_offers_free_fast_delivery","tests.tests_frontend","2026-01-27","passed","2026-01-27","TestDeluxeMembership","test_23_deluxe_memebership","",""
-"","1745","test_membership_text_appears_on_page_and_fee_is_paid","tests.tests_frontend","2026-01-27","passed","2026-01-27","TestDeluxeMembership","test_23_deluxe_memebership","",""
+"","7063","test_deluxe_membership_offers_free_fast_delivery","tests.tests_frontend","2026-01-27","passed","2026-01-27","TestDeluxeMembership","test_23_deluxe_memebership","",""
+"","1699","test_membership_text_appears_on_page_and_fee_is_paid","tests.tests_frontend","2026-01-27","passed","2026-01-27","TestDeluxeMembership","test_23_deluxe_memebership","",""
+"","7407","test_deluxe_membership_offers_sales","tests.tests_frontend","2026-01-27","passed","2026-01-27","TestDeluxeMembership","test_23_deluxe_memebership","",""
