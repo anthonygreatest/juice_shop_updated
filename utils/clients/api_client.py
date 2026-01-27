@@ -271,6 +271,12 @@ class TrackingOrder(BaseClient):
             url=f'{self.endpoints.tracking}/{tracking_id}',
             headers=headers
         )
+    @allure.step('Downloading receipt')
+    def download_receipt(self, url):
+        return self.get(
+            url=url
+        )
+
 
 class OrderHistory(BaseClient):
 

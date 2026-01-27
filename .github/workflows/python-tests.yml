@@ -81,7 +81,6 @@ jobs:
           github_token: ${{ secrets.GH_PAGES_TOKEN }}
           publish_dir: ./allure-report
 
-
       - name: Upload Allure Report Artifact
         uses: actions/upload-artifact@v4
         with:
