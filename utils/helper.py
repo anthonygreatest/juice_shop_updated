@@ -7,6 +7,8 @@ import allure
 import pytest
 import requests
 from httpx import Response
+from pypdf import PdfReader
+
 from data.constants import PRODUCTS_LIST
 from data.constants2 import DELIVERY_OPTIONS
 from data.dataclasses.added_product_data import AddedProductData
@@ -17,6 +19,7 @@ from data.dataclasses.e_wallet_deposit_data import EWalletDepositData
 from data.endpoints import Endpoints
 from data.factory import DataFactory
 from data.generators.generator import BaseFakerGenerator
+from data.paths import RECEIPT_PATH
 from modules.credit_card_module import CreditCardModule
 from utils.schemas.add_address_request_schema import AddAddressSchema
 from utils.schemas.add_address_resp_schema import AddAddressRespSchema
@@ -707,3 +710,12 @@ def select_delivery_speed():
         delivery_price=Decimal(str(selected_option['price']))
     )
 
+def get_receipt_data(receipt):
+
+    with open(RECEIPT_PATH, 'wb') as file:
+        file.write(receipt.content)
+
+    reader = PdfReader(RECEIPT_PATH)
+    receipt_text = reader.pages[0].extract_text()
+
+    return receipt_text

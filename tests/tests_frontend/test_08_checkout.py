@@ -1,17 +1,18 @@
 import json
-
+import time
+from pathlib import Path
+from pypdf import PdfReader
 import allure
 import pytest
 
 from data.frontend_endpoints import PlaywrightEndpoints
 from data.locators.payment_options_page_locators import PaymentOptionsPageLocators
-from pages.checkout_page import CheckoutPage
+from data.paths import RECEIPT_PATH
 from pages.payment_options_page import PaymentOptionsPage
-from tests.conftest import login_response
-from tests.tests_frontend.frontend_helpers import find_product_by_id
 from utils.assertions.tracking_order_assertions import assert_print_order_confirmation_url_matches_expected, \
-    assert_twitter_repost_link_matches_expected, assert_outer_source_link_matches_expected
-from utils.helper import prepare_checkout_response
+    assert_twitter_repost_link_matches_expected, assert_outer_source_link_matches_expected, \
+    assert_receipt_data_matches_expected
+from utils.helper import prepare_checkout_response, get_receipt_data
 
 
 @allure.feature('Checkout')
@@ -111,9 +112,23 @@ class TestCheckout:
             expected_url=order_completion_page.TWITTER_REPOST_LINK(purchase_name)
         )
 
+    @allure.title('Receipt data matches order data')
+    def test_receipt_data_matches_order_data(self, order_completion_page, checkout_factory, get_headers, basket_id, tracking_order):
 
+        checkout_data = checkout_factory(e_wallet=False, headers=get_headers, login_response=basket_id)
+        order_confirmation = prepare_checkout_response(checkout_data).order_confirmation
 
+        order_completion_page.open(PlaywrightEndpoints().ORDER_COMPLETION(order_confirmation))
+        new_page_url = order_completion_page.print_order_confirmation()
 
+        receipt = tracking_order.download_receipt(url=new_page_url)
+        receipt_text = get_receipt_data(receipt)
+
+        assert_receipt_data_matches_expected(
+            receipt_data=receipt_text,
+            email_data=basket_id,
+            checkout_data=checkout_data
+        )
 
 
 
