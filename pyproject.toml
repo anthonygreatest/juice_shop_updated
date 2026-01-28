@@ -5,7 +5,7 @@ description = "testing owasp juice shop"
 authors = [
     {name = "tony",email = "ros.59@mail.ru"}
 ]
-requires-python = ">=3.13"
+requires-python = ">=3.11"
 dependencies = [
     "allure-pytest (==2.15.3)",
     "allure-python-commons (==2.15.3)",
