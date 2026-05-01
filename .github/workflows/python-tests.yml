@@ -46,6 +46,13 @@ jobs:
           done
 
       - name: Run selected tests
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          HEADLESS: ${{ secrets.HEADLESS }}
+          EXPECT_TIMEOUT: ${{ secrets.EXPECT_TIMEOUT }}
+          SHOP_HTTP_CLIENT_URL: ${{ secrets.SHOP_HTTP_CLIENT_URL }}
+          SHOP_HTTP_CLIENT_TIMEOUT: ${{ secrets.SHOP_HTTP_CLIENT_TIMEOUT }}
+          SLOW_MO: ${{ secrets.SLOW_MO }}
         run: |
           poetry run pytest tests/tests_frontend/ \
             -m smoke \

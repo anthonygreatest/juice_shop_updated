@@ -13,7 +13,7 @@ class SettingsUI(BaseSettings):
     model_config = SettingsConfigDict(
         env_file=str(Path(__file__).parent / ".env_ui"),
         env_file_encoding='utf-8',
-        env_nested_delimiter='.'
+        env_nested_delimiter='_'
     )
 
     app_url: HttpUrl
