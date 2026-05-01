@@ -50,7 +50,6 @@ jobs:
           poetry run pytest tests/tests_frontend/ \
             -m smoke \
             --alluredir=allure-results5 \
-            ls -la allure-results \
             --maxfail=5 \
             -v
 
