@@ -9,11 +9,11 @@ from pydantic_settings import BaseSettings, SettingsConfigDict
 
 class SettingsUI(BaseSettings):
 
-
-    model_config = SettingsConfigDict(
-        env_file=str(Path(__file__).parent / ".env_ui"),
-        env_file_encoding='utf-8'
-    )
+    #
+    # model_config = SettingsConfigDict(
+    #     env_file=str(Path(__file__).parent / ".env_ui"),
+    #     env_file_encoding='utf-8'
+    # )
 
     app_url: HttpUrl
     headless: bool
