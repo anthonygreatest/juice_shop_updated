@@ -1,23 +1,23 @@
-name: Python Tests with Allure
-
+#name: Python Tests with Allure
+#
 on:
-  workflow_dispatch:
-  push:
-    branches: [master, develop]
-  pull_request:
-    branches: [master, develop]
-
-env:
-  SHOP_HTTP_CLIENT__URL: http://127.0.0.1:3000
-  SHOP_HTTP_CLIENT__TIMEOUT: 100
-
-  EXPECT_TIMEOUT: 15000
-  HEADLESS: true
-  APP_URL: http://127.0.0.1:3000
-  SLOW_MO: 500
-  VIDEOS_PATH: "./videos"
-
-
+#  workflow_dispatch:
+#  push:
+#    branches: [master, develop]
+#  pull_request:
+#    branches: [master, develop]
+#
+#env:
+#  SHOP_HTTP_CLIENT__URL: http://127.0.0.1:3000
+#  SHOP_HTTP_CLIENT__TIMEOUT: 100
+#
+#  EXPECT_TIMEOUT: 15000
+#  HEADLESS: true
+#  APP_URL: http://127.0.0.1:3000
+#  SLOW_MO: 500
+#  VIDEOS_PATH: "./videos"
+#
+#
 jobs:
   test:
     runs-on: ubuntu-latest
@@ -64,6 +64,7 @@ jobs:
           poetry run pytest tests/tests_frontend/ \
             -m smoke \
             --alluredir=allure-results5 \
+            ls -la allure-results \
             --maxfail=5 \
             -v
 

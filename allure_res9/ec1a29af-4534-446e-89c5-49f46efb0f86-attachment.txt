@@ -1,0 +1,3 @@
+2026-02-13 22:06:02,909 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-13 22:06:03,054 | HTTP_CLIENT | INFO | Got response 400 Bad Request from http://127.0.0.1:3000/api/Users
+2026-02-13 22:06:03,055 | BASE_ASSERTIONS | INFO | Check that response status code matches 400

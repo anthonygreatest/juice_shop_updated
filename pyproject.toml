@@ -2,7 +2,7 @@
 name = "juice_shop"
 version = "1.0.0"
 description = "Testing OWASP Juice Shop"
-authors = ["user <gауау.01@list.ru>"]
+authors = ["user grig.2001@mail.ru"]
 package-mode = false
 
 [tool.poetry.dependencies]

@@ -22,6 +22,7 @@ class TestDeluxeMembership:
         get_headers
     ):
 
+        print('new')
         deposit, balance_before_deposit = sum_deposited_into_e_wallet
 
         deluxe_membership_page.open(PlaywrightEndpoints.DELUXE_MEMBERSHIP)

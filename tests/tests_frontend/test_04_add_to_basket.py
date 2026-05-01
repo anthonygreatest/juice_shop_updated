@@ -1,6 +1,7 @@
 import allure
 import pytest
 
+from data.frontend_endpoints import PlaywrightEndpoints
 from data.generators.order_generator import pick_product_to_purchase
 
 
@@ -12,6 +13,8 @@ class TestAddProduct:
 
     @allure.title('Added product appears in basket')
     def test_added_product_appears_in_basket(self, search_page, basket_page, put_product_into_basket):
+
+        search_page.open(PlaywrightEndpoints.ALL_PRODUCTS)
 
         selected_product = pick_product_to_purchase(available=True)
 

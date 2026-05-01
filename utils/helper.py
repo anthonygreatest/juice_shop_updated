@@ -19,7 +19,7 @@ from data.dataclasses.e_wallet_deposit_data import EWalletDepositData
 from data.endpoints import Endpoints
 from data.factory import DataFactory
 from data.generators.generator import BaseFakerGenerator
-from data.paths import RECEIPT_PATH
+from data.paths import RECEIPT_PATH, SENSITIVE_PATH
 from modules.credit_card_module import CreditCardModule
 from utils.schemas.add_address_request_schema import AddAddressSchema
 from utils.schemas.add_address_resp_schema import AddAddressRespSchema
@@ -719,3 +719,11 @@ def get_receipt_data(receipt):
     receipt_text = reader.pages[0].extract_text()
 
     return receipt_text
+
+def record_password_and_email(password, email):
+
+    with open(SENSITIVE_PATH, 'w') as f:
+        f.write(
+            f'PASSWORD={password}'
+            f'\nEMAIL={email}'
+        )

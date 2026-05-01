@@ -1,0 +1,7 @@
+2026-02-13 22:06:02,911 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-13 22:06:03,228 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-02-13 22:06:03,228 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-02-13 22:06:03,229 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-13 22:06:03,303 | HTTP_CLIENT | INFO | Got response 400 Bad Request from http://127.0.0.1:3000/api/Users
+2026-02-13 22:06:03,303 | BASE_ASSERTIONS | INFO | Check that response status code matches 400
+2026-02-13 22:06:03,304 | REGISTER_ASSERTIONS | INFO | Checking user not able to register again

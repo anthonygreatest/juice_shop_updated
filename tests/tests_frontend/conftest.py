@@ -2,6 +2,8 @@ import allure
 import pytest
 from pathlib import Path
 from playwright.sync_api import Playwright
+from pytest_playwright.pytest_playwright import browser
+
 from config_ui import SettingsUI
 from data.dataclasses.set_order_data import SetOrderData
 from data.frontend_endpoints import PlaywrightEndpoints
@@ -149,7 +151,41 @@ def change_password_after_login_page(register, unauth_page):
 
     return ChangePasswordPage(login_page.page), new_data
 
-
+#
+# @pytest.fixture(scope='session')
+# def logged_in(playwright: Playwright, ui_settings: SettingsUI, register):
+#     browser = playwright.chromium.launch(headless=ui_settings.headless, slow_mo=ui_settings.slow_mo)
+#     context = browser.new_context(base_url=f'{ui_settings.app_url}', record_video_dir=ui_settings.videos_dir)
+#     page = context.new_page()
+#
+#     register_response, new_user = register_user_and_set_security_answer(register)
+#
+#     login_page = LoginPage(page)
+#     login_page.open(PlaywrightEndpoints.LOGIN)
+#     login_page = log_in_user(
+#         new_user,
+#         login_page
+#     )
+#     with page.expect_response('**/rest/user/login') as response_info:
+#         login_page.click_login_btn()
+#
+#     context.storage_state(path='auth.json')
+#
+#     context.close()
+#     browser.close()
+#
+#     return 'auth.json'
+#
+# @pytest.fixture
+# def auth_page(logged_in, playwright: Playwright, ui_settings):
+#     browser = playwright.chromium.launch(headless=ui_settings.headless, slow_mo=ui_settings.slow_mo)
+#     context = browser.new_context(base_url=f'{ui_settings.app_url}', record_video_dir=ui_settings.videos_dir,
+#                                   storage_state=logged_in)
+#     page = context.new_page()
+#     yield page
+#     context.close()
+#     browser.close()
+#
 @pytest.fixture(scope='session')
 def logged_in(playwright: Playwright, ui_settings: SettingsUI, register):
     browser = playwright.chromium.launch(headless=ui_settings.headless, slow_mo=ui_settings.slow_mo)
@@ -318,7 +354,7 @@ def digital_wallet_page(auth_page):
 def close_cookies_banner(auth_page):
 
     try:
-        auth_page.wait_for_selector(PaymentOptionsPageLocators.accept_cookies_btn, timeout=500)
+        auth_page.wait_for_selector(PaymentOptionsPageLocators.accept_cookies_btn, timeout=5000)
         auth_page.click(PaymentOptionsPageLocators.accept_cookies_btn)
     except:
         print('Cookies banner not found')

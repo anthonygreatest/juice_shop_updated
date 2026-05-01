@@ -1,6 +1,11 @@
 import random
+from pathlib import Path
+
+import allure
 import pytest
 from httpx import Client
+from pydantic_settings.sources.providers.yaml import yaml
+from xdist.scheduler import LoadScopeScheduling
 
 from config import Settings
 from data.constants import DELIVERY_OPTIONS, PRODUCTS_LIST
@@ -23,12 +28,43 @@ from utils.helper import register_user_and_set_security_answer, \
     prepare_review_payload, generate_user_name, registered_user_with_changed_password, \
     prepare_customer_feedback_payload, product_added_to_basket, recycle_payload, prepare_checkout_response
 from utils.raw_api_client import RawAPIClient
-
+from pytest import Item
 from utils.schemas.add_address_resp_schema import AddAddressRespSchema
 from utils.schemas.add_credit_card_resp_schema import AddCreditCardRespSchema
 from utils.schemas.like_review_resp_schema import LikeReviewRequestSchema
 from utils.schemas.login_response_schema import LoginResponseSchema
 from utils.schemas.password_schema import RandomPasswordSchema
+
+@pytest.hookimpl(hookwrapper=True, trylast=True)
+def pytest_runtest_call(item: Item):
+    yield
+    allure.dynamic.title(' '.join(item.name.split('_')[1:]).capitalize())
+
+
+def pytest_terminal_summary(terminalreporter, exitstatus, config):
+    durations = []
+    for test in terminalreporter.stats.get('passed', []):
+        durations.append([test.nodeid, test.duration])
+    for test in terminalreporter.stats.get('failed', []):
+        durations.append([test.nodeid, test.duration])
+    for test in terminalreporter.stats.get('skipped', []):
+        durations.append([test.nodeid, test.duration])
+    config.cache.set('test_durations', durations)
+
+@pytest.hookimpl(tryfirst=True)
+def pytest_collection_modifyitems(session, config, items):
+    durations = config.cache.get('test_durations', [])
+    durations_dict = {nodeid: duration for nodeid, duration in durations}
+    items.sort(key=lambda item: durations_dict.get(item.nodeid, 0), reverse=True)
+
+class FifoBasedScheduler(LoadScopeScheduling):
+
+    def _split_scope(self, nodeid: str) -> str:
+        return nodeid
+
+@pytest.hookimpl(tryfirst=True)
+def pytest_xdist_make_scheduler(config, log):
+    return FifoBasedScheduler(config, log)
 
 @pytest.fixture(scope='session')
 def raw_api_client(http_client):

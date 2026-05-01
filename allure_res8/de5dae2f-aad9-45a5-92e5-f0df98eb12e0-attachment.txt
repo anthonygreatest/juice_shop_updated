@@ -1,0 +1,3 @@
+2026-02-13 22:03:15,280 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-13 22:03:15,357 | HTTP_CLIENT | INFO | Got response 500 Internal Server Error from http://127.0.0.1:3000/api/Users
+2026-02-13 22:03:15,358 | BASE_ASSERTIONS | INFO | Check that response status code matches 500

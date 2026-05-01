@@ -1,0 +1,1 @@
+{"uuid": "45813302-4fcf-4850-a716-7a5bbf0b69a3", "children": ["b0c58140-7f89-4002-8834-c06fa83d4770"], "befores": [{"name": "create_credit_card", "status": "passed", "start": 1770123485087, "stop": 1770123485087}], "afters": [{"name": "create_credit_card::0", "status": "passed", "start": 1770123486938, "stop": 1770123486938}], "start": 1770123485087, "stop": 1770123486938}
