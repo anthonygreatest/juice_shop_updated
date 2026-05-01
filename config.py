@@ -29,7 +29,7 @@ class Settings(BaseSettings):
 
     @property
     def client_url(self) -> str:
-        return str(self.url)
+        return str(self.shop_http_client_url)
 
 
 #
