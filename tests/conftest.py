@@ -40,31 +40,31 @@ def pytest_runtest_call(item: Item):
     yield
     allure.dynamic.title(' '.join(item.name.split('_')[1:]).capitalize())
 
-
-def pytest_terminal_summary(terminalreporter, exitstatus, config):
-    durations = []
-    for test in terminalreporter.stats.get('passed', []):
-        durations.append([test.nodeid, test.duration])
-    for test in terminalreporter.stats.get('failed', []):
-        durations.append([test.nodeid, test.duration])
-    for test in terminalreporter.stats.get('skipped', []):
-        durations.append([test.nodeid, test.duration])
-    config.cache.set('test_durations', durations)
-
-@pytest.hookimpl(tryfirst=True)
-def pytest_collection_modifyitems(session, config, items):
-    durations = config.cache.get('test_durations', [])
-    durations_dict = {nodeid: duration for nodeid, duration in durations}
-    items.sort(key=lambda item: durations_dict.get(item.nodeid, 0), reverse=True)
-
-class FifoBasedScheduler(LoadScopeScheduling):
-
-    def _split_scope(self, nodeid: str) -> str:
-        return nodeid
-
-@pytest.hookimpl(tryfirst=True)
-def pytest_xdist_make_scheduler(config, log):
-    return FifoBasedScheduler(config, log)
+#
+# def pytest_terminal_summary(terminalreporter, exitstatus, config):
+#     durations = []
+#     for test in terminalreporter.stats.get('passed', []):
+#         durations.append([test.nodeid, test.duration])
+#     for test in terminalreporter.stats.get('failed', []):
+#         durations.append([test.nodeid, test.duration])
+#     for test in terminalreporter.stats.get('skipped', []):
+#         durations.append([test.nodeid, test.duration])
+#     config.cache.set('test_durations', durations)
+#
+# @pytest.hookimpl(tryfirst=True)
+# def pytest_collection_modifyitems(session, config, items):
+#     durations = config.cache.get('test_durations', [])
+#     durations_dict = {nodeid: duration for nodeid, duration in durations}
+#     items.sort(key=lambda item: durations_dict.get(item.nodeid, 0), reverse=True)
+#
+# class FifoBasedScheduler(LoadScopeScheduling):
+#
+#     def _split_scope(self, nodeid: str) -> str:
+#         return nodeid
+#
+# @pytest.hookimpl(tryfirst=True)
+# def pytest_xdist_make_scheduler(config, log):
+#     return FifoBasedScheduler(config, log)
 
 @pytest.fixture(scope='session')
 def raw_api_client(http_client):
