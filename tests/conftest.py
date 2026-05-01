@@ -77,7 +77,7 @@ def http_client(api_settings: Settings) -> Client:
     # settings = api_settings.shop_http_client
     return Client(
         timeout=api_settings.shop_http_client_timeout,
-        base_url=api_settings.shop_http_client_url,
+        base_url=api_settings.client_url,
         event_hooks={
             'request': [log_request_event_hook],
             'response': [log_response_event_hook]
