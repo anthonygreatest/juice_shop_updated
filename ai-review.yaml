@@ -1,0 +1,18 @@
+llm:
+  provider: OPENROUTER
+
+  meta:
+    model: mistralai/mistral-7b-instruct:free
+    max_tokens: 15000
+    temperature: 0.3
+
+  http_client:
+    timeout: 120
+    api_url: https://openrouter.ai/api/v1
+
+vcs:
+  provider: GITHUB
+
+  http_client:
+    timeout: 120
+    api_url: https://api.github.com
