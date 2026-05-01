@@ -4,8 +4,6 @@ from pathlib import Path
 import allure
 import pytest
 from httpx import Client
-from pydantic_settings.sources.providers.yaml import yaml
-from xdist.scheduler import LoadScopeScheduling
 
 from config import Settings
 from data.constants import DELIVERY_OPTIONS, PRODUCTS_LIST
