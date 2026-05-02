@@ -1,5 +1,5 @@
 llm:
-  provider: OPENROUTER
+  provider: openrouter
 
   http_client:
     api_url: https://openrouter.ai/api/v1
@@ -12,7 +12,7 @@ llm:
 
 
 vcs:
-  provider: GITHUB
+  provider: github
 
   http_client:
     api_url: https://api.github.com
