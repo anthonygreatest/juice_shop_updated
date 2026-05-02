@@ -1,0 +1,40 @@
+2026-05-02 14:10:00,338 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-05-02 14:10:00,384 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-05-02 14:10:00,385 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-05-02 14:10:00,386 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-05-02 14:10:00,411 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-05-02 14:10:00,411 | BASE_PAGE | INFO | Opening url /#/login
+2026-05-02 14:10:01,701 | BASE_PAGE | INFO | Closing welcome banner
+2026-05-02 14:10:02,841 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-05-02 14:10:02,842 | INPUT | INFO | Fill input Email with tylermiller@example.net
+2026-05-02 14:10:03,358 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-05-02 14:10:03,358 | INPUT | INFO | Checking that input Email has value tylermiller@example.net
+2026-05-02 14:10:03,364 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-05-02 14:10:03,364 | INPUT | INFO | Fill input Password with $7IO_4^rjN
+2026-05-02 14:10:03,882 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-05-02 14:10:03,882 | INPUT | INFO | Checking that input Password has value $7IO_4^rjN
+2026-05-02 14:10:03,897 | BASE_ELEMENT | INFO | Getting locator button#loginButton at index 0
+2026-05-02 14:10:03,897 | BASE_ELEMENT | INFO | Clicking button Login Button
+2026-05-02 14:10:05,094 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Cards
+2026-05-02 14:10:05,122 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Cards
+2026-05-02 14:10:05,125 | HTTP_CLIENT | INFO | Make GET request to http://127.0.0.1:3000/rest/wallet/balance
+2026-05-02 14:10:05,166 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/wallet/balance
+2026-05-02 14:10:05,167 | HTTP_CLIENT | INFO | Make PUT request to http://127.0.0.1:3000/rest/wallet/balance
+2026-05-02 14:10:05,212 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/wallet/balance
+2026-05-02 14:10:05,217 | BASE_PAGE | INFO | Opening url /#/deluxe-membership
+2026-05-02 14:10:05,727 | BASE_ELEMENT | INFO | Getting locator div.card-text span at index 1
+2026-05-02 14:10:05,727 | TEXT | INFO | Getting text Membership Fee
+2026-05-02 14:10:05,733 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Become deluxe member"] at index 0
+2026-05-02 14:10:05,733 | BUTTON | INFO | Checking button Become member is enabled
+2026-05-02 14:10:05,738 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Become deluxe member"] at index 0
+2026-05-02 14:10:05,738 | BASE_ELEMENT | INFO | Clicking button Become member
+2026-05-02 14:10:06,357 | BASE_ELEMENT | INFO | Getting locator div button[type="submit"] at index 1
+2026-05-02 14:10:06,358 | BUTTON | INFO | Checking button Pay with e-wallet is enabled
+2026-05-02 14:10:06,362 | BASE_ELEMENT | INFO | Getting locator div button[type="submit"] at index 1
+2026-05-02 14:10:06,362 | BASE_ELEMENT | INFO | Clicking button Pay with e-wallet
+2026-05-02 14:10:06,897 | BASE_ELEMENT | INFO | Getting locator div.heading span at index 0
+2026-05-02 14:10:06,897 | BASE_ELEMENT | INFO | Checking that text Membership activated contains text You are already a deluxe member!
+2026-05-02 14:10:06,901 | HTTP_CLIENT | INFO | Make GET request to http://127.0.0.1:3000/rest/wallet/balance
+2026-05-02 14:10:06,918 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/wallet/balance
+2026-05-02 14:10:06,919 | E_WALLET_ASSERTIONS | INFO | Checking balance changes after paying membership fee
+2026-05-02 14:10:06,919 | BASE_ASSERTIONS | INFO | Check that balance after paying membership fee equals 0
