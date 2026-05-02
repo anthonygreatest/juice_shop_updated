@@ -1,29 +1,80 @@
 name: 🤖 AI Review
 
 on:
-  pull_request:
+  # Ручной запуск пайплайна (можно заменить на on: pull_request)
   workflow_dispatch:
+    inputs:
+      review-command:
+        type: choice
+        default: "run"
+        options: [ run, run-inline, run-context, run-summary ]
+        description: "Какой тип ревью запустить"
+
+      pull-request-number:
+        type: string
+        required: true
+        description: "Номер Pull Request"
 
 jobs:
   ai-review:
+    name: Run AI Review
     runs-on: ubuntu-latest
 
+    # Поднимаем локальную LLM Ollama в фоне
+    services:
+      ollama:
+        image: ollama/ollama:latest
+        ports: [ 11434:11434 ]
+
     steps:
-      - name: Checkout
+      # 1️⃣ Клонируем репозиторий
+      - name: 🧱 Checkout repository
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0
+          fetch-depth: 0  # нужно, чтобы видеть diff в PR
 
-      - name: Run AI Review
-        uses: Nikita-Filonov/ai-review@v0.36.0
+      # 2️⃣ Ждём, пока Ollama поднимется
+      - name: ⏳ Wait for Ollama to start
+        run: |
+          echo "⏳ Ожидаем запуск Ollama..."
+          for i in $(seq 1 30); do
+            if curl -s http://localhost:11434/api/version; then
+              echo "✅ Ollama готова!"
+              break
+            fi
+            sleep 3
+          done
+
+      # 3️⃣ Скачиваем выбранную модель (в примере — mistral)
+      - name: 📦 Pull model
+        run: |
+          echo "📥 Загружаем модель 'mistral'..."
+          curl -X POST http://localhost:11434/api/pull \
+            -H "Content-Type: application/json" \
+            -d '{"model": "mistral"}'
+
+      # 4️⃣ Прогреваем модель (чтобы первый запрос не был долгим)
+      - name: 🔥 Warm up model
+        run: |
+          echo "🔥 Прогреваем модель..."
+          curl -s -X POST http://localhost:11434/api/chat \
+            -H "Content-Type: application/json" \
+            -d '{"model":"mistral","stream":false,"messages":[{"role":"user","content":"Hello!"}]}'
+          echo "✅ Warm-up complete."
+
+      # 5️⃣ Запускаем ревью
+      - name: 🚀 Run AI Review
+        # Укажите актуальную версию инструмента
+        uses: Nikita-Filonov/ai-review@v0.27.0
         env:
+          # GitHub токен для доступа к PR
           VCS__HTTP_CLIENT__API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
+          # Контекст PR (репозиторий и номер)
           VCS__PIPELINE__OWNER: ${{ github.repository_owner }}
           VCS__PIPELINE__REPO: ${{ github.event.repository.name }}
-          VCS__PIPELINE__PULL_NUMBER: ${{ github.event.pull_request.number }}
-
-          LLM__HTTP_CLIENT__API_TOKEN: ${{ secrets.OPENROUTER_API_TOKEN }}
+          VCS__PIPELINE__PULL_NUMBER: ${{ inputs.pull-request-number }}
 
         with:
-          review-command: run
+          # Тип запускаемого ревью: полный, только inline или summary
+          review-command: ${{ inputs.review-command }}
