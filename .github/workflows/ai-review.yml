@@ -1,19 +1,8 @@
 name: 🤖 AI Review
 
 on:
-  # Ручной запуск пайплайна (можно заменить на on: pull_request)
+  pull_request:
   workflow_dispatch:
-    inputs:
-      review-command:
-        type: choice
-        default: "run"
-        options: [ run, run-inline, run-context, run-summary ]
-        description: "Какой тип ревью запустить"
-
-      pull-request-number:
-        type: string
-        required: true
-        description: "Номер Pull Request"
 
 jobs:
   ai-review:
