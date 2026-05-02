@@ -57,6 +57,8 @@ jobs:
         uses: Nikita-Filonov/ai-review@v0.27.0
         env:
           # GitHub токен для доступа к PR
+          VCS__PROVIDER: github
+          LLM__PROVIDER: ollama
           VCS__HTTP_CLIENT__API_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
           # Контекст PR (репозиторий и номер)
