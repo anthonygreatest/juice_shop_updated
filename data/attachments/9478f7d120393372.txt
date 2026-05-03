@@ -1,0 +1,50 @@
+2026-05-03 15:51:03,912 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Addresss
+2026-05-03 15:51:03,935 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Addresss
+2026-05-03 15:51:03,939 | BASE_ELEMENT | INFO | Getting locator app-mat-search-bar:has-text(" search ") at index 0
+2026-05-03 15:51:03,939 | BASE_ELEMENT | INFO | Clicking button Open search
+2026-05-03 15:51:04,462 | BASE_ELEMENT | INFO | Getting locator input[type="text"] at index 0
+2026-05-03 15:51:04,462 | INPUT | INFO | Fill input Search with Lemon Juice (500ml)
+2026-05-03 15:51:04,973 | BASE_ELEMENT | INFO | Getting locator input[type="text"] at index 0
+2026-05-03 15:51:04,973 | INPUT | INFO | Checking that input Search has value Lemon Juice (500ml)
+2026-05-03 15:51:04,977 | INPUT | INFO | Press Enter
+2026-05-03 15:51:04,977 | BASE_ELEMENT | INFO | Getting locator input[type="text"] at index 0
+2026-05-03 15:51:05,503 | BASE_ELEMENT | INFO | Getting locator app-mat-search-bar:has-text(" close ") at index 0
+2026-05-03 15:51:05,503 | BASE_ELEMENT | INFO | Clicking button Close search
+2026-05-03 15:51:06,057 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Add to Basket"] at index 0
+2026-05-03 15:51:06,057 | BUTTON | INFO | Checking button Add product Button is enabled
+2026-05-03 15:51:06,061 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Add to Basket"] at index 0
+2026-05-03 15:51:06,061 | BASE_ELEMENT | INFO | Clicking button Add product Button
+2026-05-03 15:51:06,594 | BASE_PAGE | INFO | Opening url /#/basket
+2026-05-03 15:51:07,098 | BASE_ELEMENT | INFO | Getting locator button#checkoutButton at index 0
+2026-05-03 15:51:07,098 | BUTTON | INFO | Checking button Checkout Button is enabled
+2026-05-03 15:51:07,101 | BASE_ELEMENT | INFO | Getting locator button#checkoutButton at index 0
+2026-05-03 15:51:07,102 | BASE_ELEMENT | INFO | Clicking button Checkout Button
+2026-05-03 15:51:07,642 | BASE_ELEMENT | INFO | Getting locator mat-radio-button at index 0
+2026-05-03 15:51:07,643 | BUTTON | INFO | Checking button Select address is enabled
+2026-05-03 15:51:07,646 | BASE_ELEMENT | INFO | Getting locator mat-radio-button at index 0
+2026-05-03 15:51:07,646 | BASE_ELEMENT | INFO | Clicking button Select address
+2026-05-03 15:51:08,175 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to payment selection"] at index 0
+2026-05-03 15:51:08,175 | BUTTON | INFO | Checking button Continue Button is enabled
+2026-05-03 15:51:08,178 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to payment selection"] at index 0
+2026-05-03 15:51:08,178 | BASE_ELEMENT | INFO | Clicking button Continue Button
+2026-05-03 15:51:08,719 | BASE_ELEMENT | INFO | Getting locator mat-row mat-radio-button at index 1
+2026-05-03 15:51:08,719 | BASE_ELEMENT | INFO | Clicking button Delivery option Button
+2026-05-03 15:51:09,241 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to delivery method selection"] at index 0
+2026-05-03 15:51:09,241 | BUTTON | INFO | Checking button Continue Button is enabled
+2026-05-03 15:51:09,245 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to delivery method selection"] at index 0
+2026-05-03 15:51:09,245 | BASE_ELEMENT | INFO | Clicking button Continue Button
+2026-05-03 15:51:09,861 | BASE_ELEMENT | INFO | Getting locator mat-row mat-radio-button at index 0
+2026-05-03 15:51:09,861 | BUTTON | INFO | Checking button Select card is enabled
+2026-05-03 15:51:09,865 | BASE_ELEMENT | INFO | Getting locator mat-row mat-radio-button at index 0
+2026-05-03 15:51:09,865 | BASE_ELEMENT | INFO | Clicking button Select card
+2026-05-03 15:51:10,409 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to review"] at index 0
+2026-05-03 15:51:10,410 | BUTTON | INFO | Checking button Continue to checkout is enabled
+2026-05-03 15:51:10,413 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to review"] at index 0
+2026-05-03 15:51:10,413 | BASE_ELEMENT | INFO | Clicking button Continue to checkout
+2026-05-03 15:51:10,969 | BASE_ELEMENT | INFO | Getting locator div.mdc-card tr at index 1
+2026-05-03 15:51:10,969 | BASE_ELEMENT | INFO | Checking that text Order summary data contains text 0.0
+2026-05-03 15:51:10,975 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/BasketItems/10
+2026-05-03 15:51:10,994 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/BasketItems/10
+2026-05-03 15:51:10,994 | BASE_PAGE | INFO | Reloading page with url http://127.0.0.1:3000/#/order-summary
+2026-05-03 15:51:11,732 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/Addresss/7
+2026-05-03 15:51:11,737 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/Addresss/7
