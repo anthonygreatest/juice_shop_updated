@@ -8,6 +8,10 @@ jobs:
     name: Run AI Review
     runs-on: ubuntu-latest
 
+    permissions:
+      pull-requests: write
+      contents: read
+
     services:
       ollama:
         image: ollama/ollama:latest
