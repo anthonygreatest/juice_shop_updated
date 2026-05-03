@@ -54,4 +54,4 @@ jobs:
           VCS__PIPELINE__REPO: ${{ github.event.repository.name }}
           VCS__PIPELINE__PULL_NUMBER: ${{ inputs.pull-request-number }}
         with:
-          review-command: inline
+          review-command: run-inline
