@@ -29,6 +29,7 @@ class Settings(BaseSettings):
 
     @property
     def client_url(self) -> str:
+        print('hello')
         return str(self.shop_http_client_url)
 
 
