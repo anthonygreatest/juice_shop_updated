@@ -1,0 +1,39 @@
+2026-02-03 15:58:07,473 | BASE_ELEMENT | INFO | Getting locator button#navbarAccount at index 0
+2026-02-03 15:58:07,473 | BASE_ELEMENT | INFO | Clicking button Account menu
+2026-02-03 15:58:08,025 | BASE_ELEMENT | INFO | Getting locator button#navbarLogoutButton at index 0
+2026-02-03 15:58:08,026 | BUTTON | INFO | Checking button Logout is enabled
+2026-02-03 15:58:08,038 | BASE_ELEMENT | INFO | Getting locator button#navbarLogoutButton at index 0
+2026-02-03 15:58:08,038 | BASE_ELEMENT | INFO | Clicking button Logout
+2026-02-03 15:58:08,625 | BASE_PAGE | INFO | Opening url /#/login
+2026-02-03 15:58:09,145 | BASE_PAGE | INFO | Closing welcome banner
+2026-02-03 15:58:10,186 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-02-03 15:58:10,186 | INPUT | INFO | Fill input Email with hcompton@example.com
+2026-02-03 15:58:10,711 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-02-03 15:58:10,712 | INPUT | INFO | Checking that input Email has value hcompton@example.com
+2026-02-03 15:58:10,723 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-02-03 15:58:10,723 | INPUT | INFO | Fill input Password with 61RWzbfm_s
+2026-02-03 15:58:11,280 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-02-03 15:58:11,280 | INPUT | INFO | Checking that input Password has value 61RWzbfm_s
+2026-02-03 15:58:11,293 | BASE_ELEMENT | INFO | Getting locator button#loginButton at index 0
+2026-02-03 15:58:11,294 | BASE_ELEMENT | INFO | Clicking button Login Button
+2026-02-03 15:58:11,878 | BASE_ELEMENT | INFO | Getting locator app-mat-search-bar:has-text(" search ") at index 0
+2026-02-03 15:58:11,878 | BASE_ELEMENT | INFO | Clicking button Open search
+2026-02-03 15:58:12,435 | BASE_ELEMENT | INFO | Getting locator input[type="text"] at index 0
+2026-02-03 15:58:12,436 | INPUT | INFO | Fill input Search with Lemon Juice (500ml)
+2026-02-03 15:58:12,988 | BASE_ELEMENT | INFO | Getting locator input[type="text"] at index 0
+2026-02-03 15:58:12,989 | INPUT | INFO | Checking that input Search has value Lemon Juice (500ml)
+2026-02-03 15:58:13,000 | INPUT | INFO | Press Enter
+2026-02-03 15:58:13,000 | BASE_ELEMENT | INFO | Getting locator input[type="text"] at index 0
+2026-02-03 15:58:13,555 | BASE_ELEMENT | INFO | Getting locator app-mat-search-bar:has-text(" close ") at index 0
+2026-02-03 15:58:13,556 | BASE_ELEMENT | INFO | Clicking button Close search
+2026-02-03 15:58:14,123 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Add to Basket"] at index 0
+2026-02-03 15:58:14,123 | BUTTON | INFO | Checking button Add product Button is enabled
+2026-02-03 15:58:14,136 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Add to Basket"] at index 0
+2026-02-03 15:58:14,136 | BASE_ELEMENT | INFO | Clicking button Add product Button
+2026-02-03 15:58:14,718 | BASE_PAGE | INFO | Opening url /#/basket
+2026-02-03 15:58:15,252 | BASE_ELEMENT | INFO | Getting locator div#price at index 0
+2026-02-03 15:58:15,252 | TEXT | INFO | Getting text Total Price
+2026-02-03 15:58:15,265 | BASKET_ASSERTIONS | INFO | Checking product price changes for deluxe members
+2026-02-03 15:58:15,273 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/BasketItems/11
+2026-02-03 15:58:15,361 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/BasketItems/11
+2026-02-03 15:58:15,361 | BASE_PAGE | INFO | Reloading page with url http://127.0.0.1:3000/#/basket

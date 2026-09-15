@@ -10,5 +10,5 @@ PROFILE_PICTURE = PROJECT_ROOT / 'tests' / 'tests_frontend' / 'pictures' / 'prof
 COMPLAINT_FILE = PROJECT_ROOT / 'tests' / 'tests_frontend' / 'pictures' / 'complaint.pdf'
 LARGE_PICTURE = PROJECT_ROOT / 'tests' / 'tests_frontend' / 'pictures' / 'large_profile_picture.jpg'
 RECEIPT_PATH = PROJECT_ROOT / 'tests' / 'tests_frontend' / 'downloads' / f'receipt_{random.randint(1, 1000)}.pdf'
-print(RECEIPT_PATH)
+SENSITIVE_PATH = PROJECT_ROOT / '.private'
 

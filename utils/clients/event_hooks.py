@@ -13,3 +13,4 @@ def log_response_event_hook(response: Response):
     logger.info(
         f'Got response {response.status_code} {response.reason_phrase} from {response.url}'
     )
+    print('hey')

@@ -29,4 +29,16 @@ class AddressPageLocators:
     created_country = 'mat-cell.mat-column-Country'
 
 
+def quick_sort(nums: list[int]) -> list[int]:
+    if len(nums) <= 1:
+        return nums
+
+    pivot = nums[len(nums) // 2]
+    left = [x for x in nums if x < pivot]
+    middle = [x for x in nums if x == pivot]
+    right = [x for x in nums if x > pivot]
+    return quick_sort(left) + middle + quick_sort(right)
+
+print(quick_sort([3, 1, 4, 1, 5, 9]))
+
 

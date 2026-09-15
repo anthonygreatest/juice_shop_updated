@@ -1,22 +1,8 @@
-name: Python Tests with Allure
-
 on:
-  workflow_dispatch:
   push:
     branches: [master, develop]
   pull_request:
     branches: [master, develop]
-
-env:
-  SHOP_HTTP_CLIENT__URL: http://127.0.0.1:3000
-  SHOP_HTTP_CLIENT__TIMEOUT: 100
-
-  EXPECT_TIMEOUT: 15000
-  HEADLESS: true
-  APP_URL: http://127.0.0.1:3000
-  SLOW_MO: 500
-  VIDEOS_PATH: "./videos"
-
 
 jobs:
   test:
@@ -34,14 +20,14 @@ jobs:
         with:
           python-version: 3.11
 
+      - name: Install Poetry
+        run: pip install poetry
+
       - name: Install dependencies
-        run: |
-          python -m pip install --upgrade pip
-          pip install -r requirements.txt
-          pip install allure-pytest
+        run: poetry install --no-interaction --no-root
 
       - name: Install Playwright Browsers
-        run: playwright install
+        run: poetry run playwright install --with-deps
 
       - name: Start Juice Shop
         run: |
@@ -60,9 +46,19 @@ jobs:
           done
 
       - name: Run selected tests
+        env:
+          APP_URL: ${{ secrets.APP_URL }}
+          HEADLESS: ${{ secrets.HEADLESS }}
+          EXPECT_TIMEOUT: ${{ secrets.EXPECT_TIMEOUT }}
+          SHOP_HTTP_CLIENT_URL: ${{ secrets.SHOP_HTTP_CLIENT_URL }}
+          SHOP_HTTP_CLIENT_TIMEOUT: ${{ secrets.SHOP_HTTP_CLIENT_TIMEOUT }}
+          SLOW_MO: ${{ secrets.SLOW_MO }}
         run: |
-          # Запуск тестов с тегом smoke
-          pytest tests/tests_frontend/ -m smoke --alluredir=allure-results5 --maxfail=5 -v
+          poetry run pytest tests/tests_frontend/ \
+            -m smoke \
+            --alluredir=allure-results5 \
+            --maxfail=5 \
+            -v
 
       - name: Install Allure CLI
         run: |

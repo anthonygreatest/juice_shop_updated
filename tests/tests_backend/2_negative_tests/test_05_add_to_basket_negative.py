@@ -3,7 +3,7 @@ from http import HTTPStatus
 import allure
 import pytest
 from utils.assertions.base_assertions import assert_status_code, assert_status_code_among_expected
-from utils.helper import prepare_missing_headers, prepare_raw_add_to_basket_payload
+from utils.helper import prepare_raw_add_to_basket_payload
 
 
 @allure.feature('Basket')

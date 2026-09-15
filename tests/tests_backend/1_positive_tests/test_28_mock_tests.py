@@ -1,9 +1,10 @@
 from unittest.mock import patch, MagicMock
-from utils.clients.api_client import APIClient
+from utils.clients.api_client import Register, Login
 
-def test_user_register_mock():
 
-    client = APIClient()
+def test_user_register_mock(http_client):
+
+    client = http_client
     mock_response = MagicMock()
 
     mock_response.json.return_value = {"status": "success",
@@ -47,9 +48,9 @@ def test_user_register_mock():
             headers=None
         )
 
-def test_login_mock():
+def test_login_mock(http_client):
 
-    client = APIClient()
+    client = http_client
     mock_response = MagicMock()
 
     mock_response.json.return_value = {

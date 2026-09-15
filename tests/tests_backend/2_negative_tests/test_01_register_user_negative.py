@@ -30,6 +30,18 @@ class TestRegisterUserNegative:
         (True, *generate_password_pair(), HTTPStatus.INTERNAL_SERVER_ERROR),
         (fake.email(), fake.password(), 1, HTTPStatus.INTERNAL_SERVER_ERROR),
         (fake.email(), fake.password(), '', HTTPStatus.BAD_REQUEST)
+        # ('jessepinkman@gmail.com', '', '', HTTPStatus.BAD_REQUEST),
+        # ('jessepinkman@gmail.com', 1, 1, HTTPStatus.INTERNAL_SERVER_ERROR),
+        # ('jessepinkman@gmail.com', True, True, HTTPStatus.INTERNAL_SERVER_ERROR),
+        # ('jessepinkman@gmail.com', 'jesse1806', 'jesse1806', HTTPStatus.CREATED),
+        # ('', 'jesse1806', 'jesse1806', HTTPStatus.BAD_REQUEST),
+        # (123, 'jesse1806', 'jesse1806', HTTPStatus.INTERNAL_SERVER_ERROR),
+        # ('@!walter', 'jesse1806', 'jesse1806', HTTPStatus.BAD_REQUEST),
+        # ('a'*150, 'jesse1806', 'jesse1806', HTTPStatus.BAD_REQUEST),
+        # ('1', 'jesse1806', 'jesse1806', HTTPStatus.BAD_REQUEST),
+        # (True, 'jesse1806', 'jesse1806', HTTPStatus.INTERNAL_SERVER_ERROR),
+        # ('jessepinkman@gmail.com', 'jesse1806', 1, HTTPStatus.INTERNAL_SERVER_ERROR),
+        # ('jessepinkman@gmail.com', 'jesse1806', '', HTTPStatus.BAD_REQUEST)
     ])
     def test_register_invalid_user(self, raw_api_client, email, password, repeat_password, expected):
 

@@ -5,7 +5,7 @@ import allure
 from httpx import Client, URL, QueryParams, Response
 import requests
 
-from config import HTTPClientConfig, Settings
+from config import Settings
 from data.endpoints import Endpoints
 from utils.schemas.add_address_resp_schema import AddAddressRespSchema, GetAddressesRespSchema
 from utils.schemas.add_credit_card_resp_schema import AddCreditCardRespSchema, GetCreditCardsRespSchema

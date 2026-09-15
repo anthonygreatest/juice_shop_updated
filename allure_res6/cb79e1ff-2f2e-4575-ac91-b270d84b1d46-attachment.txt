@@ -1,0 +1,30 @@
+2026-02-03 16:10:24,707 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-03 16:10:24,762 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-02-03 16:10:24,763 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-02-03 16:10:24,763 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-02-03 16:10:24,803 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-02-03 16:10:24,803 | BASE_PAGE | INFO | Opening url /#/login
+2026-02-03 16:10:26,007 | BASE_PAGE | INFO | Closing welcome banner
+2026-02-03 16:10:27,182 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-02-03 16:10:27,182 | INPUT | INFO | Fill input Email with ulee@example.org
+2026-02-03 16:10:27,716 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-02-03 16:10:27,716 | INPUT | INFO | Checking that input Email has value ulee@example.org
+2026-02-03 16:10:27,727 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-02-03 16:10:27,727 | INPUT | INFO | Fill input Password with !8Q&N%DcV3
+2026-02-03 16:10:28,251 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-02-03 16:10:28,251 | INPUT | INFO | Checking that input Password has value !8Q&N%DcV3
+2026-02-03 16:10:28,286 | BASE_ELEMENT | INFO | Getting locator button#loginButton at index 0
+2026-02-03 16:10:28,287 | BASE_ELEMENT | INFO | Clicking button Login Button
+2026-02-03 16:10:29,417 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Cards
+2026-02-03 16:10:29,482 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Cards
+2026-02-03 16:10:29,483 | BASE_PAGE | INFO | Opening url /#/deluxe-membership
+2026-02-03 16:10:30,030 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Become deluxe member"] at index 0
+2026-02-03 16:10:30,031 | BUTTON | INFO | Checking button Become member is enabled
+2026-02-03 16:10:30,047 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Become deluxe member"] at index 0
+2026-02-03 16:10:30,047 | BASE_ELEMENT | INFO | Clicking button Become member
+2026-02-03 16:10:30,625 | BASE_ELEMENT | INFO | Getting locator div button[type="submit"] at index 0
+2026-02-03 16:10:30,626 | BUTTON | INFO | Checking button Pay with e-wallet is disabled
+2026-02-03 16:10:30,638 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Proceed to review"] at index 0
+2026-02-03 16:10:30,638 | BUTTON | INFO | Checking button Continue to checkout is disabled
+2026-02-03 16:10:30,753 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/Cards/9
+2026-02-03 16:10:30,776 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/Cards/9

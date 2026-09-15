@@ -3,13 +3,11 @@ from datetime import datetime, timezone
 from decimal import Decimal
 
 from faker import Faker
-
-
-
 from data.generators.address_generator import address_generator
 from data.generators.order_generator import order_generator
 from data.generators.pass_generator import PasswordGenerator
 from data.generators.user_generator import user_generator
+
 
 faker = Faker()
 
@@ -50,6 +48,9 @@ class UserBuilder(BaseBuilder):
             password = faker.password()
             self.result['password'] = password
             self.result['password_repeat'] = password
+
+        from utils.helper import record_password_and_email
+        record_password_and_email(self.result['password'], self.result['email'])
 
         return self
 

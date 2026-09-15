@@ -1,0 +1,17 @@
+2026-02-01 13:27:46,292 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-01 13:27:46,361 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-02-01 13:27:46,362 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-02-01 13:27:46,362 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-02-01 13:27:46,402 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-02-01 13:27:46,403 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/rest/user/login
+2026-02-01 13:27:46,437 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/user/login
+2026-02-01 13:27:46,442 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Cards
+2026-02-01 13:27:46,479 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Cards
+2026-02-01 13:27:46,479 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/rest/deluxe-membership
+2026-02-01 13:27:46,518 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/rest/deluxe-membership
+2026-02-01 13:27:46,518 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-02-01 13:27:46,518 | BASE_ASSERTIONS | INFO | Check that response status code matches 200
+2026-02-01 13:27:46,519 | MEMBERSHIP_ASSERTIONS | INFO | Checking user able to become deluxe member
+2026-02-01 13:27:46,519 | BASE_ASSERTIONS | INFO | Check that membership text equals Congratulations! You are now a deluxe member!
+2026-02-01 13:27:46,520 | HTTP_CLIENT | INFO | Make DELETE request to http://127.0.0.1:3000/api/Cards/7
+2026-02-01 13:27:46,538 | HTTP_CLIENT | INFO | Got response 200 OK from http://127.0.0.1:3000/api/Cards/7

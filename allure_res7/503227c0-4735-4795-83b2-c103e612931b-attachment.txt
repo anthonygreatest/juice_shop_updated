@@ -1,0 +1,21 @@
+2026-02-04 11:52:54,577 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/Users
+2026-02-04 11:52:54,806 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/Users
+2026-02-04 11:52:54,807 | SCHEMA_ASSERTIONS | INFO | Validating response schema
+2026-02-04 11:52:54,809 | HTTP_CLIENT | INFO | Make POST request to http://127.0.0.1:3000/api/SecurityAnswers
+2026-02-04 11:52:54,923 | HTTP_CLIENT | INFO | Got response 201 Created from http://127.0.0.1:3000/api/SecurityAnswers
+2026-02-04 11:52:54,924 | BASE_PAGE | INFO | Opening url /#/login
+2026-02-04 11:52:57,509 | BASE_PAGE | INFO | Closing welcome banner
+2026-02-04 11:52:58,731 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-02-04 11:52:58,732 | INPUT | INFO | Fill input Email with cruzmitchell@example.com
+2026-02-04 11:52:59,356 | BASE_ELEMENT | INFO | Getting locator input#email at index 0
+2026-02-04 11:52:59,357 | INPUT | INFO | Checking that input Email has value cruzmitchell@example.com
+2026-02-04 11:52:59,403 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-02-04 11:52:59,403 | INPUT | INFO | Fill input Password with 0ORk0iGG+6
+2026-02-04 11:52:59,941 | BASE_ELEMENT | INFO | Getting locator input#password at index 0
+2026-02-04 11:52:59,941 | INPUT | INFO | Checking that input Password has value 0ORk0iGG+6
+2026-02-04 11:52:59,950 | BASE_ELEMENT | INFO | Getting locator button#loginButton at index 0
+2026-02-04 11:52:59,951 | BASE_ELEMENT | INFO | Clicking button Login Button
+2026-02-04 11:53:00,555 | BASE_ELEMENT | INFO | Getting locator button#navbarAccount at index 0
+2026-02-04 11:53:00,555 | BASE_ELEMENT | INFO | Clicking button Account menu
+2026-02-04 11:53:01,283 | BASE_ELEMENT | INFO | Getting locator button[aria-label="Go to user profile"] span.mat-mdc-menu-item-text span at index 0
+2026-02-04 11:53:01,283 | BASE_ELEMENT | INFO | Checking that text Account Name has text cruzmitchell@example.com
