@@ -34,5 +34,5 @@ class Settings(BaseSettings):
 
 
 #
-# print(settings.shop_http_client.url)
+print('HEY')
 # print(settings.shop_http_client.timeout)
