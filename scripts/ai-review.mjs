@@ -178,7 +178,13 @@ if (!content) {
 let review;
 
 try {
-  review = JSON.parse(content);
+  const cleanContent = content
+    .replace(/^```json\s*/i, "")
+    .replace(/^```\s*/i, "")
+    .replace(/\s*```$/i, "")
+    .trim();
+
+  review = JSON.parse(cleanContent);
 } catch {
   throw new Error(`Claude returned invalid JSON:\n${content}`);
 }
